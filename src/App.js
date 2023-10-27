@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CategoryPage from './pages/CategoryPage';
 import ProductPage from './pages/ProductPage';
 import NotFoundPage from './pages/NotFoundPage';
+import './styles/index.scss';
 
 function App() {
   return (

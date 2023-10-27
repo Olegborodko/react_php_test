@@ -1,0 +1,116 @@
+.menu {
+  display: flex;
+  justify-content: flex-end;
+
+  nav {
+    display: inline-block;
+    width: 535px;
+
+    ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+
+      li {
+        border: 1px solid #efefef;
+        border-right: 0;
+        width: 90px;
+        height: 80px;
+        cursor: pointer;
+      }
+
+      li:hover {
+        background-color: #101010;
+        color: #FFFFFF;
+      }
+    }
+
+    .sort-1 {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      span {
+        background: #C2C3C4;
+        width: 15px;
+        height: 6px;
+      }
+
+      span:first-child {
+        margin-bottom: 3px;
+      }
+    }
+
+    .sort-2,
+    .sort-3 {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .row {
+        display: inline-flex;
+
+        span {
+          display: inline-block;
+          background: #C2C3C4;
+          width: 6px;
+          height: 6px;
+          margin: 1.5px;
+          // margin-bottom: 3px;
+        }
+      }
+    }
+
+    .sort-3 {
+      .row {
+        span {
+          width: 5px;
+          height: 5px;
+          margin: 1px;
+        }
+      }
+    }
+
+    .filter {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 180px;
+      cursor: pointer;
+    }
+
+    .backet {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .block {
+        position: relative;
+        width: 27px;
+        height: 37px;
+
+        .frame {
+          display: inline-block;
+          position: absolute;
+          border: 3px solid #a4a4a4;
+          width: 11px;
+          height: 21px;
+          bottom: 0;
+        }
+
+        .items{
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          background: #101010;
+          padding: 3px 4px;
+          height: 18px;
+          border: 2px solid #ffffff;
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
