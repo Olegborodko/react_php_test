@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Menu from '../components/Menu';
+import { useNavigate } from 'react-router-dom';
 
 const CategoryPage = () => {
   const [products, setProducts] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API_SERVER}/products.php`,
@@ -20,6 +22,11 @@ const CategoryPage = () => {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
+  const goToProduct = (url_key) => {
+    const productUrl = `/product/${url_key}`;
+    navigate(productUrl);
+  }
+
   return (
     <>
       <Menu />
@@ -27,8 +34,8 @@ const CategoryPage = () => {
         <div className="container-main">
           <div className="products">
             {products.map(product => (
-              <div className='product' key={product.id}>
-                <img src={process.env.PUBLIC_URL + '/img/Product.png'} alt='product' />
+              <div className='product' key={product.id} onClick={() => goToProduct(product.url_key)}>
+                <img src={process.env.PUBLIC_URL + '/img/' + product.image_path} alt='product' />
                 <div className='title'>
                   {product.name}
                 </div>
