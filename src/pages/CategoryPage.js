@@ -22,9 +22,9 @@ const CategoryPage = () => {
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
-  const goToProduct = (url_key) => {
-    const productUrl = `/product/${url_key}`;
-    navigate(productUrl);
+  const goToProduct = (product) => {
+    const productUrl = `/product/${product.url_key}`;
+    navigate(productUrl, { state: product });
   }
 
   return (
@@ -34,7 +34,7 @@ const CategoryPage = () => {
         <div className="container-main">
           <div className="products">
             {products.map(product => (
-              <div className='product' key={product.id} onClick={() => goToProduct(product.url_key)}>
+              <div className='product' key={product.id} onClick={() => goToProduct(product)}>
                 <img src={process.env.PUBLIC_URL + '/img/' + product.image_path} alt='product' />
                 <div className='title'>
                   {product.name}
